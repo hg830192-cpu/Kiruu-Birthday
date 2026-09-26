@@ -1,0 +1,6 @@
+{
+  "name": "Happy Birthday Kiran | Minus 2",
+  "description": "A cute pink digital scrapbook and interactive birthday surprise celebration for Kiran Yadav (Minus 2).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
