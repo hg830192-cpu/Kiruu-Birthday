@@ -65,9 +65,9 @@ export const CustomizerHelper: React.FC = () => {
               </div>
 
               <div className="bg-purple-50 rounded-2xl p-4 border border-purple-100">
-                <p className="font-semibold text-purple-800 mb-1">💌 Customizing Friend Messages:</p>
+                <p className="font-semibold text-purple-800 mb-1">💌 Personal Message & Letters:</p>
                 <p>
-                  Edit the <code className="bg-white px-1.5 py-0.5 rounded border border-purple-200 text-purple-700 font-mono">friendMessages</code> array in <code className="font-mono text-purple-700">src/data/birthdayData.ts</code> to update the 6+ friend letters.
+                  Your personal heartfelt message and CA wishes can be customized in <code className="bg-white px-1.5 py-0.5 rounded border border-purple-200 text-purple-700 font-mono">src/data/birthdayData.ts</code>.
                 </p>
               </div>
             </div>

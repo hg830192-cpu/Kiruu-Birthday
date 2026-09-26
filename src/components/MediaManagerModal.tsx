@@ -31,7 +31,8 @@ export const MediaManagerModal: React.FC<MediaManagerModalProps> = ({ isOpen, on
     { key: 'mem-4', label: 'Memory 4', subtitle: 'Study Sessions' },
     { key: 'mem-5', label: 'Memory 5', subtitle: 'Partner in Crime' },
     { key: 'mem-6', label: 'Memory 6', subtitle: 'Future CA' },
-    { key: 'copylot-memory', label: 'Cop ylot Incident', subtitle: 'Funny reaction photo' },
+    { key: 'copylot-memory', label: 'Cop ylot Photo', subtitle: 'Reaction / candid photo' },
+    { key: 'copylot-gif', label: 'Cop ylot Meme GIF', subtitle: 'Reaction meme or GIF' },
     { key: 'best-photo', label: 'Grand Finale Best Photo', subtitle: 'Your best photo together' },
   ];
 
@@ -231,9 +232,9 @@ git push -u origin main
                 <pre className="text-xs font-mono text-emerald-300 overflow-x-auto p-2 bg-slate-950 rounded-xl leading-relaxed">
 {`git init
 git add .
-git commit -m "Kiran Yadav Birthday surprise website"
+git commit -m "CA Kiran Yadav Birthday surprise website"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/kiran-birthday.git
+git remote add origin https://github.com/YOUR_USERNAME/CA-Kiran-Yadav-Birthday.git
 git push -u origin main`}
                 </pre>
               </div>

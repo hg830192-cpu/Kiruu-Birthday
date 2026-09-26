@@ -25,10 +25,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'cop-ylot-incident', label: 'Cop ylot', level: 4 },
     { id: 'our-memories', label: 'Memories', level: 5 },
     { id: 'special-qualities', label: 'Why You’re Special', level: 6 },
-    { id: 'friend-messages', label: 'Letters', level: 7 },
-    { id: 'jokes-apart', label: 'Jokes Apart', level: 8 },
-    { id: 'ca-kiran-yadav', label: 'CA Kiran', level: 9 },
-    { id: 'final-surprise', label: 'Surprise 🎁', level: 10 },
+    { id: 'jokes-apart', label: 'Jokes Apart', level: 7 },
+    { id: 'ca-kiran-yadav', label: 'CA Kiran', level: 8 },
+    { id: 'final-surprise', label: 'Surprise 🎁', level: 9 },
   ];
 
   const handleNavClick = (id: string) => {
@@ -140,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>{copied ? 'Link Copied! 🎀' : 'Copy Link for Kiran'}</span>
             </button>
 
-            {unlockedLevel < 10 && (
+            {unlockedLevel < 9 && (
               <button
                 onClick={() => {
                   onUnlockAll();

@@ -136,11 +136,11 @@ export const Section10FinalSurprise: React.FC = () => {
               </div>
             </div>
 
-            {/* Cute GIPHY Celebration GIF */}
-            <div className="max-w-xs mx-auto h-36 rounded-2xl overflow-hidden bg-pink-50 border border-pink-200 flex items-center justify-center shadow-xs">
+            {/* Cute Celebration GIF / Sparkle Animation */}
+            <div className="max-w-xs mx-auto h-36 rounded-2xl overflow-hidden bg-gradient-to-br from-pink-100 to-rose-200 border-2 border-pink-300 flex items-center justify-center shadow-md relative">
               <img
-                src="https://media.giphy.com/media/artj92V8o75VPL7AeQ/giphy.gif"
-                alt="Celebration hug/sparkle"
+                src={customPhotos['celebration-gif'] || 'https://media.tenor.com/tYt_z97ZpSAAAAAj/birthday-happy-birthday.gif'}
+                alt="Celebration sparkle"
                 className={`w-full h-full object-cover transition-opacity duration-300 ${
                   gifLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
@@ -148,9 +148,9 @@ export const Section10FinalSurprise: React.FC = () => {
                 onError={() => setGifLoaded(false)}
               />
               {!gifLoaded && (
-                <div className="text-center p-3 text-pink-600">
-                  <span className="text-3xl">🥳✨</span>
-                  <p className="text-xs font-medium mt-1">Forever celebrating Kiran!</p>
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-3 text-center text-pink-700 bg-pink-100/90">
+                  <span className="text-4xl animate-bounce">🎂✨🎉</span>
+                  <p className="text-xs font-bold mt-1">Forever celebrating Kiran!</p>
                 </div>
               )}
             </div>

@@ -17,7 +17,6 @@ import { Section3MinusTwo } from './components/Section3MinusTwo';
 import { Section4Copylot } from './components/Section4Copylot';
 import { Section5Memories } from './components/Section5Memories';
 import { Section6SpecialQualities } from './components/Section6SpecialQualities';
-import { Section7FriendMessages } from './components/Section7FriendMessages';
 import { Section8JokesApart } from './components/Section8JokesApart';
 import { Section9CAKiran } from './components/Section9CAKiran';
 import { Section10FinalSurprise } from './components/Section10FinalSurprise';
@@ -27,7 +26,7 @@ import { Heart, Sparkles, Unlock } from 'lucide-react';
 
 function BirthdayApp() {
   const [isUnlocked, setIsUnlocked] = useState(false);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(true);
   const [unlockedChapter, setUnlockedChapter] = useState(2); // Starts at Chapter 2 after opening
   const [activeSection, setActiveSection] = useState('birthday-reveal');
   const [mediaModalOpen, setMediaModalOpen] = useState(false);
@@ -53,7 +52,7 @@ function BirthdayApp() {
   };
 
   const handleUnlockAll = () => {
-    setUnlockedChapter(10);
+    setUnlockedChapter(9);
   };
 
   return (
@@ -99,20 +98,20 @@ function BirthdayApp() {
           />
 
           {/* Chapter Testing Mode Bar */}
-          {unlockedChapter < 10 && (
+          {unlockedChapter < 9 && (
             <div className="pt-16 pb-2 px-4 text-center bg-pink-100/60 border-b border-pink-200 text-xs text-pink-700 flex items-center justify-center gap-3">
               <span>Testing mode: Each section unlocks after clicking the playful button below!</span>
               <button
                 onClick={handleUnlockAll}
-                className="font-bold underline text-pink-800 hover:text-pink-950 flex items-center gap-1"
+                className="font-bold underline text-pink-800 hover:text-pink-950 flex items-center gap-1 cursor-pointer"
               >
                 <Unlock className="w-3 h-3" />
-                <span>Unlock All 10 Chapters Now</span>
+                <span>Unlock All 9 Chapters Now</span>
               </button>
             </div>
           )}
 
-          <main className={unlockedChapter < 10 ? 'pt-2' : 'pt-14'}>
+          <main className={unlockedChapter < 9 ? 'pt-2' : 'pt-14'}>
             {/* CHAPTER 2: Birthday Reveal */}
             <div id="birthday-reveal">
               <Section2Reveal onScrollNext={() => advanceToChapter(3, 'minus-two-legend')} />
@@ -182,65 +181,49 @@ function BirthdayApp() {
                 {unlockedChapter === 6 && (
                   <PlayfulGate
                     chapterNumber={6}
-                    question="Ready to read letters from your favorite people? 💌"
-                    yesButtonLabel="Unseal the envelopes! 📬"
-                    noButtonLabel="I'm too emotional for this 🥹"
-                    onAdvance={() => advanceToChapter(7, 'friend-messages')}
-                  />
-                )}
-              </div>
-            )}
-
-            {/* CHAPTER 7: Messages From Your People (Digital Letters) */}
-            {unlockedChapter >= 7 && (
-              <div id="friend-messages" className="animate-fade-in">
-                <Section7FriendMessages />
-                {unlockedChapter === 7 && (
-                  <PlayfulGate
-                    chapterNumber={7}
                     question="Can we talk from the bottom of our hearts for a second? 🥹"
                     yesButtonLabel="Okay... jokes apart 🩷"
                     noButtonLabel="Keep roasting me please 😂"
-                    onAdvance={() => advanceToChapter(8, 'jokes-apart')}
+                    onAdvance={() => advanceToChapter(7, 'jokes-apart')}
                   />
                 )}
               </div>
             )}
 
-            {/* CHAPTER 8: Okay... Jokes Apart (Heartfelt Wishes) */}
-            {unlockedChapter >= 8 && (
+            {/* CHAPTER 7: Okay... Jokes Apart (Heartfelt Wishes from You) */}
+            {unlockedChapter >= 7 && (
               <div id="jokes-apart" className="animate-fade-in">
                 <Section8JokesApart />
-                {unlockedChapter === 8 && (
+                {unlockedChapter === 7 && (
                   <PlayfulGate
-                    chapterNumber={8}
+                    chapterNumber={7}
                     question="Ready for your future CA coronation? 📚✨"
                     yesButtonLabel="Destined for CA Kiran Yadav! 📈"
                     noButtonLabel="Don't mention audits right now 😭"
-                    onAdvance={() => advanceToChapter(9, 'ca-kiran-yadav')}
+                    onAdvance={() => advanceToChapter(8, 'ca-kiran-yadav')}
                   />
                 )}
               </div>
             )}
 
-            {/* CHAPTER 9: CA Kiran Yadav (CA Final Motivation) */}
-            {unlockedChapter >= 9 && (
+            {/* CHAPTER 8: CA Kiran Yadav (CA Final Motivation) */}
+            {unlockedChapter >= 8 && (
               <div id="ca-kiran-yadav" className="animate-fade-in">
                 <Section9CAKiran />
-                {unlockedChapter === 9 && (
+                {unlockedChapter === 8 && (
                   <PlayfulGate
-                    chapterNumber={9}
+                    chapterNumber={8}
                     question="Ready for one last little surprise? 🎁"
                     yesButtonLabel="OPEN THE GRAND FINALE! 🎀"
                     noButtonLabel="I can't handle any more love 🥹"
-                    onAdvance={() => advanceToChapter(10, 'final-surprise')}
+                    onAdvance={() => advanceToChapter(9, 'final-surprise')}
                   />
                 )}
               </div>
             )}
 
-            {/* CHAPTER 10: Final Surprise (Best Photo & Personal Letter) */}
-            {unlockedChapter >= 10 && (
+            {/* CHAPTER 9: Final Surprise (Best Photo & Personal Letter) */}
+            {unlockedChapter >= 9 && (
               <div id="final-surprise" className="animate-fade-in">
                 <Section10FinalSurprise />
               </div>

@@ -7,6 +7,7 @@ interface MediaContextType {
   clearCustomSong: () => void;
   customPhotos: Record<string, string>;
   setCustomPhoto: (key: string, file: File) => void;
+  setCustomPhotoUrl: (key: string, url: string) => void;
   clearCustomPhoto: (key: string) => void;
   resetAllMedia: () => void;
 }
@@ -65,6 +66,18 @@ export const MediaProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     reader.readAsDataURL(file);
   };
 
+  const setCustomPhotoUrl = (key: string, url: string) => {
+    setCustomPhotos((prev) => {
+      const updated = { ...prev, [key]: url };
+      try {
+        localStorage.setItem('birthday_custom_photos', JSON.stringify(updated));
+      } catch {
+        // Ignore
+      }
+      return updated;
+    });
+  };
+
   const clearCustomPhoto = (key: string) => {
     setCustomPhotos((prev) => {
       const updated = { ...prev };
@@ -95,6 +108,7 @@ export const MediaProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         clearCustomSong,
         customPhotos,
         setCustomPhoto,
+        setCustomPhotoUrl,
         clearCustomPhoto,
         resetAllMedia,
       }}
